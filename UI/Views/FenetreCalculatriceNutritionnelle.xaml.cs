@@ -362,6 +362,57 @@ namespace Nutritia.UI.Views
         }
 
 
+
+        /// <summary>
+        /// Supprime la ligne de Plat/Aliment si l'utilisateur clique sur le bouton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnControlSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            Plat monPlat = new Plat();
+            Aliment monAliment = new Aliment();
+
+            int iteration = 1;
+            if (Keyboard.Modifiers == ModifierKeys.Control)
+                iteration = 10;
+            else if (Keyboard.Modifiers == ModifierKeys.Shift)
+                iteration = (Convert.ToInt32(btn.Uid) > 0 ?
+                            PlateauPlat.Count :
+                            PlateauAliment.Count);
+
+            if (Convert.ToInt32(btn.Uid) > 0)
+            {
+                foreach (var plat in PlateauPlat)
+                    if (plat.IdPlat == Convert.ToInt32(btn.Uid))
+                    {
+                        monPlat = plat;
+                        break;
+                    }
+
+                PlateauPlat.RemoveRange(0, iteration);
+            }
+
+            else
+            {
+
+                foreach (var aliment in PlateauAliment)
+                    if (aliment.IdAliment == Convert.ToInt32(btn.Uid) * -1)
+                    {
+                        monAliment = aliment;
+                        break;
+                    }
+
+                PlateauAliment.RemoveRange(0, iteration);
+            }
+
+
+            DessinerPlateau();
+        }
+
+
+
         /// <summary>
         /// Méthode permettant de générer les valeurs nutritionnelles d'un aliment dans un tooltip. (Prise de Guillaume)
         /// </summary>
