@@ -55,7 +55,9 @@ D'ici, vous pouvez déja faire de nombreuses actions :
 		
 2 - Vous connecter pour accéder à votre compte premium.
 		
-3 - 
+3 - Aller à la calculatrice pour calculer la nutrition de différents plats ou aliments.
+
+4 - Et enfin, vous pourrez génerer des menus sans pouvoir les enregistrer ni en qu'il dépendent de vos restrictions.
 #VosParametres
 
 #MonProfil
@@ -63,3 +65,9 @@ D'ici, vous pouvez déja faire de nombreuses actions :
 #Langage
 
 #Nutritia
+Bienvenue dans notre application Nutritia.
+Lorsque vous ne savez plus quoi faire pour manger santé, Nutritia est la pour vous aider.
+Grâce à son système de génération de menu, vous n'aurez plus à vous creuser la tête pour savoir quoi manger.
+Nutritia prend en compte vos différentrs régimes alimentaires. Il vous aidera dans vos différents objectifs.
+De plus, la communauté autour de Nutritia est grandissante et met en commun de nombreux plats qui peuvent être les votres.
+Bref, Nutritia c'est ce qu'il vous faut.
