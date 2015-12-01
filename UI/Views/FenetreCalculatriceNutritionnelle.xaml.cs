@@ -401,7 +401,6 @@ namespace Nutritia.UI.Views
 
 				// Génération du Label comportant le nom du Plat/Aliment
 				Label lblNom = new Label();
-				lblNom.Style = (Style)(this.Resources["fontNutitia"]);
 				lblNom.FontSize = 12;
 				lblNom.Width = 230;
 

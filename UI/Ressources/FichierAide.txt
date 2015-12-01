@@ -1,7 +1,7 @@
 #AjoutPlat
-AjoutPlatAjoutPlatAjoutPlat
+
 #InfoSuspenssion
-InfoSuspenssionInfoSuspenssionInfoSuspenssion
+
 #CalculatriceNutrionnelle
 Bienvenue dans la calculatrice nutritionnelle. Elle vous confère l'aperçu d'un menu que vous avez créé vous-même.
                             
@@ -32,13 +32,13 @@ Survoler les plats et aliments pour voir la valeur nutritive atomique de l'élé
 Vous pouvez apercevoir une icône à droite dans une ligne de plat ou d'aliment, elle indique si l'élément est un plat (couteau fourchette) ou un aliment (panier d'épicerie).
 
 #EnvoyerDon
-EnvoyerDonEnvoyerDonEnvoyerDon
+
 #GenerationMenu
 
 #ListeEpicerie
-ListeEpicerieListeEpicerieListeEpicerie
+
 #MenuConnecte
-MenuConnecteMenuConnecteMenuConnecte
+
 #MenuPrincipal
 Vous voici dans le menu principal de l'application.
 
@@ -57,8 +57,9 @@ D'ici, vous pouvez déja faire de nombreuses actions :
 		
 3 - 
 #VosParametres
-VosParametresVosParametresVosParametres
+
 #MonProfil
-MonProfilMonProfilMonProfil
+
 #Langage
-LangageLangageLangage
+
+#Nutritia

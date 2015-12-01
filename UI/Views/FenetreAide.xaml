@@ -13,13 +13,23 @@
         <Grid.Background>
             <ImageBrush Opacity="0.3" ImageSource="/Nutritia;component/UI/Images/background.jpg"/>
         </Grid.Background>
-        <TabControl Name="tcAide" TabStripPlacement="Left" Background="Transparent">
+        <TabControl Name="tcAide" TabStripPlacement="Left" Background="Transparent" Style="{StaticResource tabControl}">
+            <TabItem Style="{StaticResource tabItem}" Name="tiNutritia" Header="Nutritia">
+                <ScrollViewer PreviewMouseWheel="ScrollFocus">
+                    <StackPanel>
+                        <Label Style="{StaticResource fontSousTitre}" Content="Nutritia" />
+                        <TextBlock Name="Nutritia" TextWrapping="Wrap">
+
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
             <TabItem Style="{StaticResource tabItem}" Name="tiAjoutPlat" Header="{Resx AjoutPlat}">
                 <ScrollViewer PreviewMouseWheel="ScrollFocus">
                     <StackPanel>
                         <Label Style="{StaticResource fontSousTitre}" Content="{Resx AjoutPlat}" />
                         <TextBlock Name="AjoutPlat" TextWrapping="Wrap">
-                            
+
                         </TextBlock>
                     </StackPanel>
                 </ScrollViewer>

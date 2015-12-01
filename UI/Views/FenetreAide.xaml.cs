@@ -27,17 +27,11 @@ namespace Nutritia.UI.Views
 
 			switch (nomFenetre)
 			{
-				case "AjoutPlatMembre":
+				case "AjoutPlat":
 					tcAide.SelectedItem = tiAjoutPlat;
-					break;
-				case "APropos":
-					tcAide.SelectedItem = tiLangue;
 					break;
 				case "CreationProfil":
 					tcAide.SelectedItem = tiProfil;
-					break;
-				case "Don":
-					tcAide.SelectedItem = tiDon;
 					break;
 				case "FenetreCalculatriceNutritionelle":
 					tcAide.SelectedItem = tiCalculatrice;
@@ -45,13 +39,13 @@ namespace Nutritia.UI.Views
 				case "FenetreConnexion":
 					tcAide.SelectedItem = tiConnexion;
 					break;
-				case "FenetreParametre":
+				case "FenetreVotes":
 					tcAide.SelectedItem = tiParametre;
 					break;
 				case "FenetreGenerateurMenus":
 					tcAide.SelectedItem = tiGenerationMenu;
 					break;
-				case "ListeEpicerie":
+				case "FenetreListeEpicerie":
 					tcAide.SelectedItem = tiListeEpicerie;
 					break;
 				case "MenuPrincipal":
@@ -64,11 +58,15 @@ namespace Nutritia.UI.Views
 					tcAide.SelectedItem = tiProfil;
 					break;
 				default:
-					tcAide.SelectedItem = tiMenuPrincipal;
+					tcAide.SelectedItem = tiNutritia;
 					break;
 			}
 
 			AppliquerText();
+
+			// On redéfinnit la hauteur de la fenêtre suivant le nombre d'onglets
+			//this.Height = 25 + tcAide.Items.Count * 31;
+
 		}
 
 		void AppliquerText()
@@ -96,7 +94,36 @@ namespace Nutritia.UI.Views
 
 			foreach (var texte in dicAide)
 			{
-				((TextBlock)this.FindName(texte.Key)).Text = texte.Value;
+				TextBlock tbContenuAide = (TextBlock)this.FindName(texte.Key);
+                if (tbContenuAide != null)
+					tbContenuAide.Text = texte.Value;
+				else
+				{
+					TabItem tiNvlSection = new TabItem();
+					tiNvlSection.Style = (Style)FindResource("tabItem");
+					tiNvlSection.Header = texte.Key;
+					ScrollViewer svNvlSection = new ScrollViewer();
+					svNvlSection.PreviewMouseWheel += ScrollFocus;
+					StackPanel spNvlSection = new StackPanel();
+
+					Label lblTitre = new Label();
+					lblTitre.Content = texte.Key;
+					lblTitre.Style = (Style)FindResource("fontSousTitre");
+					TextBlock tbContenuNvSection = new TextBlock();
+					tbContenuNvSection.TextWrapping = TextWrapping.Wrap;
+					tbContenuNvSection.Text = texte.Value;
+
+					// On ajoute tous les enfants dans les parents
+					spNvlSection.Children.Add(lblTitre);
+					spNvlSection.Children.Add(tbContenuNvSection);
+
+					// On définnit ensuite les valeur de contenu
+					svNvlSection.Content = spNvlSection;
+					tiNvlSection.Content = svNvlSection;
+
+					// Puis on ajoute finalement cet onglet au TabControl
+					tcAide.Items.Add(tiNvlSection);
+				}
 			}
 		}
 
